@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row mt-5 mb-5">
+    <div class="col-4">
+      <h2 class="text-center bg-primary text-white rounded h-100 m-0">
+        Player: {{ player }}
+      </h2>
+    </div>
+    <div class="col-4">
+      <h2
+        class="text-center bg-success text-white rounded h-100 m-0"
+        *ngIf="winner"
+      >
+        Winner: {{ winner }}
+      </h2>
+      <h2
+      class="text-center bg-warning text-white rounded h-100 m-0"
+      *ngIf="draw"
+    >
+      Draw
+    </h2>
+    </div>
+    <div class="col-4">
+      <button
+        type="button"
+        class="btn btn-secondary w-100 h-100"
+        (click)="onClickRestart()"
+      >
+        Restart
+      </button>
+    </div>
+  </div>
+  <div class="row" *ngFor="let row of matrix">
+    <div class="col-4 p-0 square" *ngFor="let cell of row" (click)="onClickSquare(cell)">
+      <div class="symbol" *ngIf="cell.player">
+        <img src="assets/images/svg/x.svg" *ngIf="cell.player === '1'" />
+        <img src="assets/images/svg/o.svg" *ngIf="cell.player === '2'" />
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+.row {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.square {
+  position: relative;
+  background-color: #3CAEA3;
+  border: 1px solid #173F5F;
+  &:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+  &:hover{
+    cursor: pointer;
+    background-color: #20639B;
+  }
+
+  .symbol {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 20%;
+  }
+}
